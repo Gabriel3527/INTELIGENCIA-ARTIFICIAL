@@ -1,77 +1,77 @@
-const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
+caixaPrincipal = document.querySelector("caixa-principal")
+caixaPerguntas = document.querySelector("caixa-perguntas")
+caixaAlternativas = document.querySelector("caixa-alternaivas")
+caixaResultado = document.querySelector("caixa-resultado")
+textoResultado = document.querySelector("texto-resultado")
 
-const perguntas = [
+perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Você acaba de descobrir um novo dispositivo que consegue traduzir qualquer idioma instantaneamente. Qual é a sua primeira reação?",
         alternativas: [
             {
-                texto: "Isso é assustador!",
-                afirmacao: "No início ficou com medo do que essa tecnologia pode fazer. "
+                texto: "Isso pode facilitar muito a comunicação!",
+                afirmacao: "Você imagina todas as possibilidades de viajar e interagir com pessoas ao redor do mundo."
             },
             {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "Quis saber como usar IA no seu dia a dia."
+                texto: "Acho que isso pode acabar com a necessidade de aprender idiomas.",
+                afirmacao: "Sente que as pessoas podem se tornar preguiçosas com essa tecnologia."
+            }    
+        ]
+    },
+
+    {
+        enunciado: "Na sua escola, um professor introduz o uso deste dispositivo em suas aulas de línguas. Você se sente:",
+        alternativas: [
+            {
+                texto: "Animado! Isso vai me ajudar a entender melhor as aulas.",
+                afirmacao: "Você se sente mais confiante em participar das aulas de idiomas."
+            },
+            {
+                texto: "Preocupado! Isso vai diminuir a prática da língua.",
+                afirmacao: "Você teme que os alunos não se esforcem para aprender."
             }
         ]
     },
     {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
+        enunciado: "Durante um debate sobre o impacto da tecnologia nas línguas, você se posiciona:",
         alternativas: [
             {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
+                texto: "A tecnologia pode preservar línguas ameaçadas de extinção.",
+                afirmacao: "Você vê uma oportunidade de ajudar a manter vivas culturas e tradições."
             },
             {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
+                texto: "A dependência dessa tecnologia pode levar ao esquecimento de línguas.",
+                afirmacao: "Você acredita que a autenticidade da comunicação pode ser perdida."
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Ao final da discussão, você decide criar um projeto sobre a importância da comunicação intercultural. Como você procede?",
         alternativas: [
             {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
+                texto: "Cria um vídeo explicativo usando o dispositivo.",
+                afirmacao: "Você quer mostrar como a tecnologia pode ser uma aliada na educação."
             },
             {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
+                texto: "Escreve um artigo refletindo sobre a necessidade de aprender idiomas.",
+                afirmacao: "Você acredita que a experiência pessoal é irreplaceável."
             }
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Para um trabalho em grupo de história, um colega quer usar o dispositivo para traduzir todo o material. O que você faz?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                texto: "Concordo, pois facilita o trabalho em grupo.",
+                afirmacao: "Você se preocupa mais com a praticidade do que com a profundidade do aprendizado."
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
-            }
-        ]
-    },
-    {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
-        alternativas: [
-            {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
-            },
-            {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
+                texto: "Acho que devemos fazer as traduções manualmente para garantir a compreensão.",
+                afirmacao: "Você valoriza o aprendizado ativo e a pesquisa pessoal."
             }
         ]
     },
 ];
-
 
 let atual = 0;
 let perguntaAtual;
@@ -111,3 +111,4 @@ function mostraResultado() {
 }
 
 mostraPergunta();
+
